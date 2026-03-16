@@ -1,87 +1,140 @@
-📊 Analisis Indeks Harga Komoditas
-📌 Deskripsi Proyek
+# 📊 Commodity Price Analysis in Indonesia
 
-Proyek ini bertujuan untuk menganalisis data indeks harga komoditas guna memahami pola perubahan harga, perbedaan nilai antar komoditas, serta tren pergerakan harga sepanjang tahun.
+This project analyzes **commodity price data in Indonesia** using Python to identify price trends, highest and lowest annual changes, and monthly average patterns.
 
-Melalui proses data cleaning, eksplorasi data (EDA), serta visualisasi data, analisis ini berfokus pada identifikasi komoditas dengan nilai indeks harga tertinggi dan terendah serta melihat dinamika perubahan harga dari bulan ke bulan.
+The analysis focuses on **data cleaning, exploratory data analysis (EDA), and visualization** to understand fluctuations in commodity prices across different time periods.
 
-Analisis dilakukan menggunakan Python dengan library analisis data seperti Pandas, NumPy, dan Matplotlib untuk mengolah dan memvisualisasikan data sehingga menghasilkan insight yang lebih mudah dipahami.
+This project demonstrates a typical **Data Analyst workflow**, including data preprocessing, statistical exploration, and visualization of economic data.
 
-🎯 Tujuan Analisis
+---
 
-Tujuan utama dari proyek ini adalah:
+# 📌 Objectives
 
-Mengidentifikasi komoditas dengan indeks harga tahunan tertinggi
+The objectives of this project are:
 
-Mengidentifikasi komoditas dengan indeks harga terendah
+* Clean raw commodity price data
+* Transform the dataset into an analyzable format
+* Identify commodities with the **highest and lowest annual price changes**
+* Analyze **average commodity prices across months**
+* Visualize **top commodities with significant price changes**
+* Understand **price fluctuations in food commodities**
 
-Menganalisis pola perubahan harga komoditas setiap bulan
+---
 
-Menyajikan insight data melalui visualisasi yang informatif
+# 🛠 Tools & Libraries
 
-🧹 Tahapan Analisis Data
-1️⃣ Data Cleaning
+The project uses the following tools:
 
-Pada tahap ini dilakukan beberapa proses untuk memastikan kualitas data, seperti:
+* Python
+* Pandas
+* Matplotlib
+* Seaborn
+* Jupyter Notebook
 
-Memeriksa struktur dataset
+---
 
-Mengubah tipe data menjadi format numerik
+# 📂 Project Workflow
 
-Menghapus kolom atau data yang tidak diperlukan
+### 1 Data Collection
 
-Tahap ini penting agar data dapat dianalisis secara akurat.
+The dataset contains **commodity price information across multiple months** and is sourced from statistical publications.
 
-2️⃣ Exploratory Data Analysis (EDA)
+---
 
-Beberapa analisis yang dilakukan pada tahap ini antara lain:
+### 2 Data Cleaning
 
-Mengidentifikasi komoditas dengan nilai indeks tertinggi
+Data cleaning steps include:
 
-Mengidentifikasi komoditas dengan nilai indeks terendah
+* Fixing incorrect headers
+* Renaming columns (e.g., `Unnamed` → `Komoditas`)
+* Handling missing values
+* Preparing numeric columns for analysis
 
-Menghitung rata-rata nilai indeks harga per bulan
+Example:
 
-EDA membantu memahami karakteristik data sebelum dilakukan analisis lebih lanjut.
+```python
+data.rename(columns={'Unnamed: 0':'Komoditas'}, inplace=True)
+```
 
-3️⃣ Visualisasi Data
+---
 
-Visualisasi digunakan untuk mempermudah interpretasi data, antara lain:
+### 3 Exploratory Data Analysis
 
-Bar Chart untuk menampilkan komoditas dengan nilai indeks tertinggi
+Several analyses were performed to understand commodity price behavior:
 
-Line Chart untuk melihat tren perubahan harga komoditas dari bulan ke bulan
+* Identifying **highest annual price increases**
+* Identifying **lowest annual price changes**
+* Calculating **average prices across months**
 
-Dengan visualisasi, pola data menjadi lebih mudah dipahami.
+Example:
 
-🔍 Insight Utama
+```python
+data.sort_values(by='Tahunan', ascending=False)
+```
 
-Berdasarkan hasil analisis, diperoleh beberapa insight penting:
+---
 
-Terdapat perbedaan signifikan nilai indeks harga antar komoditas.
+### 4 Data Visualization
 
-Beberapa komoditas memiliki nilai indeks yang lebih tinggi dibandingkan yang lain, yang menunjukkan adanya kenaikan harga yang lebih besar pada komoditas tertentu.
+Data visualization is used to better understand commodity price trends.
 
-Nilai indeks harga komoditas menunjukkan fluktuasi sepanjang tahun, yang mencerminkan dinamika pasar.
+Examples include:
 
-Visualisasi data membantu mengidentifikasi komoditas yang paling berkontribusi terhadap perubahan indeks harga.
+* **Top 10 commodities with the highest annual price increase**
+* **Price trend analysis for specific commodity groups**
 
-🛠️ Tools & Teknologi
+Example filtering:
 
-Tools yang digunakan dalam proyek ini:
+```python
+komoditas = data[data["Komoditas"] == "Daging Dan Hasil-Hasilnya"]
+```
 
-Python
+These visualizations help highlight **price volatility and seasonal patterns in commodity markets**.
 
-Pandas
+---
 
-NumPy
+# 📈 Example Visualization
 
-Matplotlib
+![Commodity Price Visualization](images/visualization.png)
 
-Jupyter Notebook / VS Code
+The visualization helps identify:
 
-📈 Kesimpulan
+* Commodities with the **largest annual price increases**
+* Commodities with **stable price patterns**
+* Possible **seasonal fluctuations in food commodity prices**
 
-Analisis ini memberikan gambaran mengenai perbandingan nilai indeks harga antar komoditas serta tren perubahan harga sepanjang tahun.
+---
 
-Dengan memanfaatkan teknik analisis data dan visualisasi, proyek ini membantu dalam memahami pola pergerakan harga komoditas serta menunjukkan bagaimana data dapat digunakan untuk menghasilkan insight yang mendukung pengambilan keputusan berbasis data.
+# 💡 Key Skills Demonstrated
+
+* Data Cleaning
+* Data Transformation
+* Exploratory Data Analysis (EDA)
+* Data Visualization
+* Python for Data Analysis
+* Economic Data Interpretation
+
+---
+
+# 📁 Project Structure
+
+```
+commodity-price-analysis
+│
+├── data
+│   └── data_harga.csv
+│
+├── notebook
+│   └── Analist.ipynb
+│
+├── images
+│   └── visualization.png
+│
+└── README.md
+```
+
+---
+
+# 👨‍💻 Author
+
+This project was created as part of a **Data Analyst portfolio** to demonstrate the ability to process, analyze, and visualize economic datasets using Python.
