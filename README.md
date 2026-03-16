@@ -95,7 +95,7 @@ These visualizations help highlight **price volatility and seasonal patterns in 
 
 # 📈 Example Visualization
 
-![Commodity Price Visualization](images/visualization.png)
+![Commodity Price Visualization](images/output.png)
 
 The visualization helps identify:
 
